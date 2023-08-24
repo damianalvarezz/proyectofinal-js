@@ -7,7 +7,11 @@ const autos = [
     {id: 1, marca: 'volkswagen', modelo: 'Up!', precio: 4390000, foto: "./assets/img/volkswagen1.jpg" }, 
     {id: 2, marca: 'volkswagen', modelo: 'Voyage', precio: 4750000, foto:"./assets/img/volkswagen2.jpg" },
     {id: 3, marca: 'peugeot', modelo: '308', precio: 4450000, foto:"./assets/img/peugeot1.jpg"  },
-    {id: 4, marca: 'peugeot', modelo: '2008', precio: 6450000, foto: "./assets/img/peugeot2.jpg" }
+    {id: 4, marca: 'peugeot', modelo: '2008', precio: 6450000, foto: "./assets/img/peugeot2.jpg" },
+    {id: 5, marca: 'toyota', modelo: 'Etios', precio: 7860000, foto: "./assets/img/toyota1.jpg" },
+    {id: 6, marca: 'toyota', modelo: 'Corolla', precio: 8340000, foto: "./assets/img/toyota2.jpg" },
+    {id: 7, marca: 'renault', modelo: 'Kwid', precio: 6210000, foto: "./assets/img/renault1.jpg" },
+    {id: 8, marca: 'renault', modelo: 'Sandero', precio: 8170000, foto: "./assets/img/renault2.jpg" }
 ]
 
 const marcas = ['./assets/img/Volkswagen-Logo.png', './assets/img/Toyota-Logo.png', './assets/img/renault-logo.png', './assets/img/Peugeot_Logo.png']
@@ -163,11 +167,32 @@ paso1 = ()=>{
 
     })
     imgs[1].addEventListener('click', ()=>{
+        var miConsulta = new Consulta('toyota', '', 0, 0, 0);
         renderModelos('toyota');
-        
+        imgs[0].addEventListener('click', ()=>{
+            let imgs = document.getElementsByTagName('img'); 
+            console.log(imgs[0].getAttribute('id'));
+            renderCuotas(imgs[0].getAttribute('id'), miConsulta)
+        })
+        imgs[1].addEventListener('click', ()=>{
+            let imgs = document.getElementsByTagName('img'); 
+            console.log(imgs[1].getAttribute('id'));
+            renderCuotas(imgs[1].getAttribute('id'), miConsulta)
+        })
     })
     imgs[2].addEventListener('click', ()=>{
+        var miConsulta = new Consulta('renault', '', 0, 0, 0);
         renderModelos('renault');
+        imgs[0].addEventListener('click', ()=>{
+            let imgs = document.getElementsByTagName('img'); 
+            console.log(imgs[0].getAttribute('id'));
+            renderCuotas(imgs[0].getAttribute('id'), miConsulta)
+        })
+        imgs[1].addEventListener('click', ()=>{
+            let imgs = document.getElementsByTagName('img'); 
+            console.log(imgs[1].getAttribute('id'));
+            renderCuotas(imgs[1].getAttribute('id'), miConsulta)
+        })
     })
     imgs[3].addEventListener('click', ()=>{
         var miConsulta = new Consulta('peugeot', '', 0, 0, 0);
